@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs/promises');
 
 const uuid = require('./helpers/uuid');
+const { readAndAppend } = require('./helpers/fsUtils');
 
 const PORT = process.env.PORT || 3001;
 
@@ -56,15 +57,17 @@ app.post('/notes', (req, res) => {
         };
         db.push(newNote)
 
-        const dbString = JSON.stringify(db, null,)
+        const dbString = JSON.stringify(db, null, 2)
 
         fs.writeFile(`./db/db.json`, dbString, (err) =>
             err
                 ? console.error(err)
                 : console.log(
-                    `Review for ${newNote.title} has been written to JSON file`
+                    `Post for ${newNote.title} has been written to JSON file`
                 )
         );
+
+        readAndAppend(newNote, './db/db.json');
 
         const response = {
             status: 'success',
