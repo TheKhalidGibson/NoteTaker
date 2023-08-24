@@ -3,6 +3,8 @@ const path = require('path');
 
 const fs = require('fs/promises');
 
+const db = require('./db/db.json')
+
 const uuid = require('./helpers/uuid');
 const { readAndAppend } = require('./helpers/fsUtils');
 
@@ -42,7 +44,7 @@ app.get('*', (req, res) =>
 
 // the following code is all of my posts
 
-app.post('/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
     // Logs that POST request was received
     console.info(`${req.method} request received to add a review`);
 
@@ -66,8 +68,9 @@ app.post('/notes', (req, res) => {
                     `Post for ${newNote.title} has been written to JSON file`
                 )
         );
-
-        readAndAppend(newNote, './db/db.json');
+        
+        // this line was creating duplicates
+        // readAndAppend(newNote, './db/db.json');
 
         const response = {
             status: 'success',
