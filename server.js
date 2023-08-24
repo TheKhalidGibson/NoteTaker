@@ -6,7 +6,7 @@ const fs = require('fs/promises');
 const db = require('./db/db.json')
 
 const uuid = require('./helpers/uuid');
-const { readAndAppend } = require('./helpers/fsUtils');
+const { readAndAppend, readFromFile, writeToFile } = require('./helpers/fsUtils');
 
 const PORT = process.env.PORT || 3001;
 
@@ -21,13 +21,7 @@ app.use(express.static('public'));
 
 // the following code is all of my gets
 app.get('/api/notes', (req, res) => {
-    fs.readFile('./db/db.json', 'utf8')
-        .then((data) => {
-            console.log(data)
-            let notes = JSON.parse(data)
-            console.log(notes)
-            res.json(notes)
-        })
+  res.json(db)
 })
 
 app.get('/', (req, res) =>
@@ -55,7 +49,7 @@ app.post('/api/notes', (req, res) => {
         const newNote = {
             title,
             text,
-            review_id: uuid(),
+            id: uuid(),
         };
         db.push(newNote)
 
@@ -85,6 +79,24 @@ app.post('/api/notes', (req, res) => {
 
 
 });
+
+// DELETE Route for a specific tip
+app.delete('/api/notes/:review_id', (req, res) => {
+    const titleId = req.params.review_id;
+    readFromFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+      .then((json) => {
+        console.log(json)
+        // Make a new array of all tips except the one with the ID provided in the URL
+        const result = json.filter((title) => title.id !== titleId);
+  
+        // Save that array to the filesystem
+        writeToFile('./db/db.json', result);
+  
+        // Respond to the DELETE request
+        res.json(`Item ${titleId} has been deleted 🗑️`);
+      });
+  });
 
 
 app.listen(PORT, () =>
