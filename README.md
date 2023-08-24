@@ -52,4 +52,12 @@ The following lists the API routes that that I have created:
 
 * `GET /api/notes` that reads the `db.json` file and returns all saved notes as JSON.
 
-* `POST /api/notes` that receives the new notes that save on the request body, adds to the `db.json` file, and then returns the new notes to the client. I have given each note a unique id for when it's saved
+* `POST /api/notes` that receives the new notes that save on the request body, adds to the `db.json` file, and then returns the new notes to the client. I have given each note a unique id for when it's saved.
+
+## Bonus
+
+Despite not yet learning how to handle DELETE requests this application offers the option to delete a note that is already existing. That functionality is taken care of the front end and just needed to be connecting to the back end. As a bonus I have routed the DELETE functionality of this application.
+
+* `DELETE /api/notes/:id` receives a query parameter that contains the id of a note to delete. To delete a note, the user must click the red trashcan icon on the chosen note and it will be deleted upon refreshing the page or after clicking icon twice.
+
+##
