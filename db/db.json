@@ -1,22 +1,22 @@
 [
   {
-    "title": "Test Title",
-    "text": "Test text",
-    "id": "1"
+    "title": "Complete Challenge",
+    "text": "Express.js - Note Taker",
+    "id": "0499"
   },
   {
-    "title": "nice ",
-    "text": "nicer",
-    "id": "dac1"
+    "title": "Study Session",
+    "text": "Data Types, Asynchronous Functions, and Middleware",
+    "id": "ac6b"
   },
   {
-    "title": "IT",
-    "text": "Works\n",
-    "id": "5712"
+    "title": "Review Schedule",
+    "text": "Use Google Calendar to plan out my week",
+    "id": "292d"
   },
   {
-    "title": "Testing",
-    "text": "123",
-    "id": "fe8f"
+    "title": "Submit Assignment",
+    "text": "Deploy and then grab the proper links for submission",
+    "id": "0f62"
   }
 ]
