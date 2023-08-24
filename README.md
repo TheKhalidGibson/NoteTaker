@@ -17,11 +17,39 @@ SO THAT I can efficiently track objectives and organize my thoughts through a no
 ## Acceptance Criteria
 
 ```
-GIVEN
-WHEN
-THEN
+GIVEN a application for note taking
+WHEN I press Get Started on the landing page
+THEN that links me to a notes page where I am presented with notes that are currently listed on the left-hand side in a column and on the right-hand side there is an input option for new note's
+WHEN I enter a new note title and text
+THEN a save icon appears in the navigation bar at the top of the page
+WHEN I click save after I have inputted
+THEN in that column on the left-hand side my input title appears at the bottom of the notes list
+WHEN I click on an existing note
+THEN I am presented with the title and the text on the right-hand side
+WHEN I click on the plus sign in the navigation bar THEN the right-hand side input column resets and I can enter new notes again
 ```
 
 ## Mock Up
 
-##
+The following images show a Mock Up example of the web application's appearance and functionality that helped guide me along in this Challenge:
+
+![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./assets/11-express-homework-demo-01.png)
+
+![Note titled “Balance accounts” reads, “Balance account books by end of day Monday,” with other notes listed on the left.](./assets/11-express-homework-demo-02.png)
+
+
+## Getting Started
+
+I have included a `db.json` file since this is a back end application I used the `fs` module to store and retrieve notes.
+
+The following lists the HTML routes that I have created:
+
+* `GET /notes` that returns the `notes.html` file.
+
+* `GET *` that returns the `index.html` file.
+
+The following lists the API routes that that I have created:
+
+* `GET /api/notes` that reads the `db.json` file and returns all saved notes as JSON.
+
+* `POST /api/notes` that receives the new notes that save on the request body, adds to the `db.json` file, and then returns the new notes to the client. I have given each note a unique id for when it's saved
