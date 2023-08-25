@@ -1,3 +1,5 @@
+// the following is inspired by class activities
+
 const fs = require('fs');
 const util = require('util');
 
