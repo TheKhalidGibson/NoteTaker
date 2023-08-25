@@ -3,7 +3,7 @@ const path = require('path');
 
 const fs = require('fs/promises');
 
-const db = require('./db/db.json')
+let db = require('./db/db.json')
 
 const uuid = require('./helpers/uuid');
 const { readAndAppend, readFromFile, writeToFile } = require('./helpers/fsUtils');
@@ -76,12 +76,12 @@ app.delete('/api/notes/:review_id', (req, res) => {
         .then((json) => {
             console.log(json)
             // Make a new array of all tips except the one with the ID provided in the URL
-            const result = json.filter((title) => title.id !== titleId);
-                console.log(result)
+            db = json.filter((title) => title.id !== titleId);
+                console.log(db)
             // Save that array to the filesystem
-            fs.writeFile(`./db/db.json`, JSON.stringify(result, null, 2))
+            fs.writeFile(`./db/db.json`, JSON.stringify(db, null, 2))
             .then (() =>{
-               return res.status(200).json(result)
+               return res.status(200).json(db)
             }).catch(err =>console.log(err))
             
             // Respond to the DELETE request
