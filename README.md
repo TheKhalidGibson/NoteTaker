@@ -60,4 +60,27 @@ Despite not yet learning how to handle DELETE requests this application offers t
 
 * `DELETE /api/notes/:id` receives a query parameter that contains the id of a note to delete. To delete a note, the user must click the red trashcan icon on the chosen note and it will be deleted upon refreshing the page or after clicking icon twice.
 
-##
+## Review 
+
+The following has been placed here to meet requirements for review:
+
+
+Refer to this link [Heroku Deployed Application](https://note-taker-kg-951a3d82ef43.herokuapp.com/) to view and explore the application and functions on deployed site on Heroku
+
+Refer to this link [GitHub Repository](https://github.com/TheKhalidGibson/NoteTaker) to view and explore the GitHub repo for this assignment
+
+
+## Screenshots
+
+The following images reflect the functionality and final results of development for this deployed application:
+
+![Image showing the URL where the deployed application landing page can be found](image-4.png)
+
+![Image showing a landing page for a note taker application](image-1.png)
+
+![Image showing the URL where the deployed application can be found](image-3.png)
+
+![Image showing a note taker application with stored data](image-2.png)
+
+
+
