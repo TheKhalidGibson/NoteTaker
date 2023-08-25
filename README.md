@@ -74,13 +74,13 @@ Refer to this link [GitHub Repository](https://github.com/TheKhalidGibson/NoteTa
 
 The following images reflect the functionality and final results of development for this deployed application:
 
-![Image showing the URL where the deployed application landing page can be found](image-4.png)
+![Image showing the URL where the deployed application landing page can be found](./assets/image-4.png)
 
-![Image showing a landing page for a note taker application](image-1.png)
+![Image showing a landing page for a note taker application](./assets/image-1.png)
 
-![Image showing the URL where the deployed application can be found](image-3.png)
+![Image showing the URL where the deployed application can be found](./assets/image-3.png)
 
-![Image showing a note taker application with stored data](image-2.png)
+![Image showing a note taker application with stored data](./assets/image-2.png)
 
 
 
