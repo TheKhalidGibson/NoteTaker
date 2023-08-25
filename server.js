@@ -21,20 +21,8 @@ app.use(express.static('public'));
 
 // the following code is all of my gets
 app.get('/api/notes', (req, res) => {
-  res.json(db)
+    res.json(db)
 })
-
-app.get('/', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-)
-
-app.get('/notes', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
-)
-
-app.get('*', (req, res) =>
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-)
 
 // the following code is all of my posts
 
@@ -62,7 +50,7 @@ app.post('/api/notes', (req, res) => {
                     `Post for ${newNote.title} has been written to JSON file`
                 )
         );
-        
+
         // this line was creating duplicates
         // readAndAppend(newNote, './db/db.json');
 
@@ -84,19 +72,36 @@ app.post('/api/notes', (req, res) => {
 app.delete('/api/notes/:review_id', (req, res) => {
     const titleId = req.params.review_id;
     readFromFile('./db/db.json')
-    .then((data) => JSON.parse(data))
-      .then((json) => {
-        console.log(json)
-        // Make a new array of all tips except the one with the ID provided in the URL
-        const result = json.filter((title) => title.id !== titleId);
-  
-        // Save that array to the filesystem
-        writeToFile('./db/db.json', result);
-  
-        // Respond to the DELETE request
-        res.json(`Item ${titleId} has been deleted 🗑️`);
-      });
-  });
+        .then((data) => JSON.parse(data))
+        .then((json) => {
+            console.log(json)
+            // Make a new array of all tips except the one with the ID provided in the URL
+            const result = json.filter((title) => title.id !== titleId);
+                console.log(result)
+            // Save that array to the filesystem
+            fs.writeFile(`./db/db.json`, JSON.stringify(result, null, 2))
+            .then (() =>{
+               return res.status(200).json(result)
+            }).catch(err =>console.log(err))
+            
+            // Respond to the DELETE request
+            
+        })
+});
+
+
+app.get('/', (req, res) =>
+    res.sendFile(path.join(__dirname, '/public/index.html'))
+)
+
+app.get('/notes', (req, res) =>
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
+)
+
+app.get('*', (req, res) =>
+    res.sendFile(path.join(__dirname, '/public/index.html'))
+)
+
 
 
 app.listen(PORT, () =>
