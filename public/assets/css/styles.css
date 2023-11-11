@@ -3,10 +3,57 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #F1F7ED;
+  
 }
+
+.navbar-top{
+
+  background-color: #0EB1D2;
+
+}
+
+.navbar-brand{
+
+  font-family: Noto Sans Tai Viet;
+  font-size: x-large;
+  color: #FFF9FB;
+}
+
+.navbar-brand:hover{
+
+  opacity: 80%;
+  color: #FFF9FB;
+}
+
 
 .save-note {
   display: none;
+  color: #FFF9FB;
+
+}
+.new-note {
+  
+  color: #FFF9FB;
+
+} 
+
+.new-note:hover {
+
+opacity: 80%;
+}
+
+
+
+.fa-trash-alt{
+  color: #E26D5C;
+}
+
+.fa-trash-alt:hover{
+  background-color: #E26D5C;
+  color: #E26D5C;
+  
+
 }
 
 .icons i {
@@ -14,11 +61,13 @@ body {
   margin-right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
+
+
 }
 
 .note-textarea,
 .note-title {
-  color: #000000;
+  color: #000501;
   width: 100%;
   outline: none;
   border: none;
@@ -28,12 +77,34 @@ body {
   resize: none;
   height: calc(100% - 63px);
   padding-top: 15px;
+  background-color: #F1F7ED;
+  font-family: Noto Sans Tai Viet;
+
+
+}
+
+.note-textarea:hover {
+  opacity: 80%;
+
+
 }
 
 .note-title {
   height: 50px;
   margin-top: 13px;
   font-size: 3rem;
+  background-color: #F1F7ED;
+  font-family: Noto Sans Tai Viet;
+  padding-bottom: 5%;
+  padding-top: 5%;
+
+
+}
+
+.note-title:hover {
+ opacity: 80%;
+
+
 }
 
 .note-title:read-only,
@@ -46,6 +117,8 @@ body {
   border-bottom: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  background-color: #F1F7ED;
+
 }
 
 .list-container {
@@ -63,6 +136,14 @@ body {
 .list-item-title {
   display: inline-block;
   width: 75%;
+  color: #000501;
+  font-family: Noto Sans Tai Viet;
+}
+
+.list-item-title:hover {
+  background-color: #F1F7ED;
+  font-weight: 900;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .list-container i {
@@ -75,4 +156,29 @@ body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+  background-color: #F1F7ED;
+
 }
+.list-container .list-group-item:hover {
+  opacity: 70%;
+
+}
+
+.landing-page-card{
+
+
+  color: #000501;
+  font-family: Noto Sans Tai Viet;
+  background-color: #FFF9FB;
+
+}
+
+.landing-page-btn{
+
+  background-color: #0EB1D2;
+  color: #FFF9FB;
+  margin-left: -1%;
+
+
+}
+
