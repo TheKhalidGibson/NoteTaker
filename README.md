@@ -65,7 +65,7 @@ Despite not yet learning how to handle DELETE requests this application offers t
 The following has been placed here to meet requirements for review:
 
 
-Refer to this link [Heroku Deployed Application](https://note-taker-kg-951a3d82ef43.herokuapp.com/) to view and explore the application and functions on deployed site on Heroku
+Refer to this link [Heroku Deployed Application](https://note-taker-kg-95e0f53d1def.herokuapp.com/) to view and explore the application and functions on deployed site on Heroku
 
 Refer to this link [GitHub Repository](https://github.com/TheKhalidGibson/NoteTaker) to view and explore the GitHub repo for this assignment
 
